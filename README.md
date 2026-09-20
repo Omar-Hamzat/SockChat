@@ -16,9 +16,6 @@ SockChat is a hands-on learning project for network programming fundamentals: cr
 - [Configuration](#configuration)
 - [Module Reference](#module-reference)
 - [Protocol](#protocol)
-- [Known Limitations](#known-limitations)
-- [Roadmap](#roadmap)
-- [Contributing](#contributing)
 
 ---
 
@@ -136,7 +133,7 @@ Waiting for client...
 ```
 Connection established successfully
 what should we call you?:
- alice
+ Omar
 type a message (type exit to escape):
  hello everyone!
 ```
@@ -144,7 +141,7 @@ type a message (type exit to escape):
 Other clients will see:
 
 ```
-alice:hello everyone!
+Omar:hello everyone!
 ```
 
 Type `exit` to leave the chat.
@@ -208,16 +205,3 @@ SockChat uses a deliberately simple, **plain-text protocol over TCP**:
 - Client → server payload: `<name>:<message>` (no trailing newline, no terminator)
 - Server → other clients: the same bytes, unmodified
 - A client disconnects by closing its socket (`exit` is handled locally and is *not* sent)
-
-
-## Roadmap for Improvements
-
-- [ ] Remove clients from the table on disconnect
-- [ ] Protect shared state with a mutex; use a dynamic client list
-- [ ] Length-prefixed or newline-delimited message framing
-- [ ] Configurable host/port via command-line arguments or env vars
-- [ ] Notify others on join / leave; announce the `exit` command
-- [ ] Portable CMake setup (`add_subdirectory` + a top-level `CMakeLists.txt`)
-- [ ] Add a `.gitignore` for `cmake-build-*` and `.idea/`
-- [ ] Private messages and user list commands
-- [ ] TLS support
