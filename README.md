@@ -2,7 +2,7 @@
 
 A lightweight, multi-client **TCP chat application written in C** using raw POSIX sockets and `pthreads`. One server relays messages between any number of connected terminal clients, with no external dependencies.
 
-SockChat is a hands-on learning project for network programming fundamentals: creating sockets, binding and listening, accepting connections, threading, and broadcasting data between peers.
+SockChat is a hands-on learning project for network programming fundamentals: creating sockets, binding and listening, accepting connections, threading, and broadcasting data between peers. It is an implementation of a typical group chat application.
 
 ---
 
